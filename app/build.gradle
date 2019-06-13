@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    dataBinding {
+        enabled = true
+    }
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        applicationId rootProject.ext.android.application
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner rootProject.ext.android.testInstrumentationRunner
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':lib_base')
+    if (rootProject.ext.switchModule.isModuleFramework) {
+        implementation project(':module_framework')
+    }
+    if (rootProject.ext.switchModule.isModuleAccount) {
+        implementation project(':module_account')
+    }
+    if (rootProject.ext.switchModule.isModuleBook) {
+        implementation project(':module_book')
+    }
+    if (rootProject.ext.switchModule.isModuleMe) {
+        implementation project(':module_me')
+    }
+}

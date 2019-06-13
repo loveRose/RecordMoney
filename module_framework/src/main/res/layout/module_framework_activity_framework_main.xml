@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".framework.FrameworkMainActivity">
+
+        <LinearLayout
+            android:id="@+id/framework_home_content_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/app_windows_background_color"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/framework_home_menu_navigation"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/framework_home_menu_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_framework_bottom_background_color"
+            app:itemTextColor="@drawable/menu_framework_text_selector"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/module_framework_menu_home_navigation" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

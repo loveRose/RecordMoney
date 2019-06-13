@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">记一笔</string>
+    <!-- 主架构菜单内容-->
+    <string name="menu_framework_item_account">账户</string>
+    <string name="menu_framework_item_book">账本</string>
+    <string name="menu_framework_item_me">我的</string>
+
+    <!-- hint -->
+    <string name="app_exit_hint">再次点击退出软件</string>
+</resources>

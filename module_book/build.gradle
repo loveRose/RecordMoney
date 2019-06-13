@@ -1,0 +1,60 @@
+if (rootProject.ext.switchModule.isModuleBook) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+
+android {
+    dataBinding {
+        enabled = true
+    }
+
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        if (!rootProject.ext.switchModule.isModuleBook) {
+            applicationId rootProject.ext.android.application + ".module_book"
+        }
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner rootProject.ext.android.testInstrumentationRunner
+        //提供给ARouter路由生成中间类
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+    sourceSets {
+        main {
+            if (rootProject.ext.switchModule.isModuleBook) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java {
+                    //排除java/application文件夹下的所有文件
+                    exclude '*application'
+                }
+            } else {
+                manifest.srcFile 'src/main/application/AndroidManifest.xml'
+            }
+        }
+    }
+
+    resourcePrefix "module_book_"
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':lib_base')
+//    implementation project(':lib_widget')
+    annotationProcessor rootProject.ext.common_dependencies.arouterCompiler
+}

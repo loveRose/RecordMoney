@@ -1,0 +1,41 @@
+ext {
+    //用于module与application切换
+    switchModule = [
+            isModuleFramework: true,
+            isModuleAccount  : true,
+            isModuleBook     : true,
+            isModuleMe       : true,
+            isModuleWidget   : true,
+    ]
+
+    //Android项目基本配置
+    android = [
+            compileSdkVersion        : 28,
+            applicationId            : 'com.lvyerose.recordmoney',
+            minSdkVersion            : 26,
+            targetSdkVersion         : 28,
+            versionCode              : 1,
+            versionName              : "1.0",
+            testInstrumentationRunner: "android.support.test.runner.AndroidJUnitRunner",
+    ]
+
+
+    //版本号
+    def ANDROIDX_APPCOMPAT_VERSION = "1.0.2"
+    def ANDROIDX_CONSTRAINT_LAYOUT_VERSION = "1.1.3"
+    def ANDROIDX_MATERIAL_VERSION = "1.0.0"
+    def A_ROUTER_VERSION = "1.4.1"
+    def A_ROUTER_COMPILER_VERSION = "1.2.2"
+    def RX_JAVA_VERSION = "2.2.8"
+
+    androidx_dependencies = [
+            appcompat       : 'androidx.appcompat:appcompat:' + ANDROIDX_APPCOMPAT_VERSION,
+            constraintLayout: 'androidx.constraintlayout:constraintlayout:' + ANDROIDX_CONSTRAINT_LAYOUT_VERSION,
+            material        : 'com.google.android.material:material:' + ANDROIDX_MATERIAL_VERSION,
+    ]
+    common_dependencies = [
+            arouter        : 'com.alibaba:arouter-api:' + A_ROUTER_VERSION,
+            arouterCompiler: 'com.alibaba:arouter-compiler:' + A_ROUTER_COMPILER_VERSION,
+            rxjava         : 'io.reactivex.rxjava2:rxjava:' + RX_JAVA_VERSION,
+    ]
+}

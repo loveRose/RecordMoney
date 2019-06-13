@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_framework_item_account"
+        android:icon="@drawable/module_framework_bottom_navigation_account_selector"
+        android:title="@string/menu_framework_item_account" />
+    <item
+        android:id="@+id/menu_framework_item_book"
+        android:icon="@drawable/module_framework_bottom_navigation_book_selector"
+        android:title="@string/menu_framework_item_book" />
+    <item
+        android:id="@+id/menu_framework_item_me"
+        android:icon="@drawable/module_framework_bottom_navigation_me_selector"
+        android:title="@string/menu_framework_item_me" />
+</menu>
