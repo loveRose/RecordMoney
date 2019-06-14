@@ -2,10 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showTest"
+        android:text="显示" />
+
 
     <com.lvyerose.recordmoney.lib_widget.menu_add.MenuAddView
+        android:id="@+id/test_menu_add_view"
         android:layout_width="80dp"
         android:layout_height="80dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="hintTest"
+        android:text="隐藏" />
 </LinearLayout>
