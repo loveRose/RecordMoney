@@ -4,9 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="自定义控件测试首页" />
+    <com.lvyerose.recordmoney.lib_widget.menu_add.MenuAddView
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+
 </LinearLayout>
