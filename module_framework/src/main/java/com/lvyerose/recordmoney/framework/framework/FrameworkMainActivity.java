@@ -2,7 +2,6 @@ package com.lvyerose.recordmoney.framework.framework;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -11,13 +10,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.lvyerose.recordmoney.framework.R;
 import com.lvyerose.recordmoney.framework.databinding.ModuleFrameworkActivityFrameworkMainBinding;
 import com.lvyerose.recordmoney.lib_base.base.BaseActivityDataBinding;
 import com.lvyerose.recordmoney.lib_base.route.PagerRouteConstant;
 import com.lvyerose.recordmoney.lib_base.route.common.TransmitFragmentService;
-import com.lvyerose.recordmoney.lib_widget.menu_add.MenuAddView;
 
 /**
  * 项目主架构，协调各个部分的内容，提供架构级的容器和逻辑

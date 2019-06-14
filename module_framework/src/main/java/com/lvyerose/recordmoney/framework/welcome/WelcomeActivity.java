@@ -38,19 +38,6 @@ public class WelcomeActivity extends BaseActivity {
                             .navigation();
                     onKeyBack();
                 });
-//        timedDisposable = Flowable.fromCallable(() -> {
-//            Thread.sleep(TIME_INTERVAL);
-//            return "DONE";
-//        })
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(Schedulers.single())
-//                .subscribe(result -> {
-//                    ARouter.getInstance()
-//                            .build(PagerRouteConstant.MODULE_MAIN_FRAMEWORK_MAIN)
-////                            .withInt("index", 1)
-//                            .navigation();
-//                    onKeyBack();
-//                });
     }
 
     @Override
