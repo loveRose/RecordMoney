@@ -90,7 +90,7 @@ public class FrameworkMainActivity extends BaseActivityDataBinding<ModuleFramewo
     }
 
     private void isShowMenuAdd(boolean isShow) {
-        dataBinding.mavFrameworkMenuAdd.setVisibility(isShow ? View.VISIBLE : View.GONE);
+        dataBinding.mavFrameworkMenuAdd.setShow(isShow);
     }
 
     /**

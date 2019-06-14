@@ -45,8 +45,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="6dp"
-                android:translationZ="8dp"
-                android:visibility="gone" />
+                android:translationZ="8dp" />
 
         </RelativeLayout>
 
