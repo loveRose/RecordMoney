@@ -12,7 +12,7 @@ android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
         if (!rootProject.ext.switchModule.isModuleBook) {
-            applicationId rootProject.ext.android.application + ".module_book"
+            applicationId rootProject.ext.android.applicationId + ".module_book"
         }
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion

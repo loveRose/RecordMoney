@@ -12,7 +12,7 @@ android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
         if (!rootProject.ext.switchModule.isModuleFramework) {
-            applicationId rootProject.ext.android.application + ".module_framework"
+            applicationId rootProject.ext.android.applicationId + ".module_framework"
         }
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
