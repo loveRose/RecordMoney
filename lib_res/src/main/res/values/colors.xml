@@ -4,10 +4,15 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="app_windows_background_color">#ffffff</color>
-    <color name="app_framework_bottom_background_color">#ffffff</color>
+    <color name="app_windows_background_color">@color/fixed_white</color>
+    <color name="app_framework_bottom_background_color">@color/fixed_white</color>
+    <color name="base_line_color">#dedede</color>
 
     <!-- 架构底部菜单切换颜色 -->
     <color name="menu_item_text_default_color">#B0B0B0</color>
     <color name="menu_item_text_selected_color">#000000</color>
+
+
+    <color name="fixed_white">#ffffff</color>
+
 </resources>

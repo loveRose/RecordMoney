@@ -3,7 +3,7 @@ package application;
 import android.os.Bundle;
 
 import com.lvyerose.recordmoney.lib_base.base.BaseActivity;
-import com.lvyerose.recordmoney.lib_widget.R;
+import com.lvyerose.recordmoney.module_widget.R;
 
 public class WidgetMainTestActivity extends BaseActivity {
     @Override

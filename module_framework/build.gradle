@@ -56,6 +56,6 @@ android {
 
 dependencies {
     implementation project(':lib_base')
-//    implementation project(':lib_widget')
+    implementation project(':module_widget')
     annotationProcessor rootProject.ext.common_dependencies.arouterCompiler
 }

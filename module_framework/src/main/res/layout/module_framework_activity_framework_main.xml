@@ -11,22 +11,45 @@
         <LinearLayout
             android:id="@+id/framework_home_content_view"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             android:background="@color/app_windows_background_color"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@id/framework_home_menu_navigation"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="vertical" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/framework_home_menu_navigation"
+        <RelativeLayout
+            android:id="@+id/view_bottom_menu_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/app_framework_bottom_background_color"
-            app:itemTextColor="@drawable/menu_framework_text_selector"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:menu="@menu/module_framework_menu_home_navigation" />
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/base_line_height"
+                android:layout_above="@+id/framework_home_menu_navigation"
+                android:background="@color/base_line_color" />
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/framework_home_menu_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/app_framework_bottom_background_color"
+                app:itemBackground="@color/app_framework_bottom_background_color"
+                app:itemTextColor="@drawable/menu_framework_text_selector"
+                app:menu="@menu/module_framework_menu_home_navigation" />
+
+            <com.lvyerose.recordmoney.lib_widget.menu_add.MenuAddView
+                android:id="@+id/mav_framework_menu_add"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="6dp"
+                android:translationZ="8dp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

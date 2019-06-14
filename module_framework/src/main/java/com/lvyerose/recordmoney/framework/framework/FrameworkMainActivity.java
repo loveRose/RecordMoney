@@ -2,6 +2,7 @@ package com.lvyerose.recordmoney.framework.framework;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -16,6 +17,7 @@ import com.lvyerose.recordmoney.framework.databinding.ModuleFrameworkActivityFra
 import com.lvyerose.recordmoney.lib_base.base.BaseActivityDataBinding;
 import com.lvyerose.recordmoney.lib_base.route.PagerRouteConstant;
 import com.lvyerose.recordmoney.lib_base.route.common.TransmitFragmentService;
+import com.lvyerose.recordmoney.lib_widget.menu_add.MenuAddView;
 
 /**
  * 项目主架构，协调各个部分的内容，提供架构级的容器和逻辑
@@ -28,8 +30,6 @@ public class FrameworkMainActivity extends BaseActivityDataBinding<ModuleFramewo
 
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
-
-    private BottomNavigationView menuNavigationView;
 
     Fragment fragmentAccount;
     Fragment fragmentBook;
@@ -61,7 +61,7 @@ public class FrameworkMainActivity extends BaseActivityDataBinding<ModuleFramewo
         initFragment();
         initBottomNavigationView();
         showFragment(index);
-        menuNavigationView.setSelectedItemId(menuNavigationView.getMenu().getItem(index).getItemId());
+        dataBinding.frameworkHomeMenuNavigation.setSelectedItemId(dataBinding.frameworkHomeMenuNavigation.getMenu().getItem(index).getItemId());
     }
 
     private void initFragment() {
@@ -69,23 +69,28 @@ public class FrameworkMainActivity extends BaseActivityDataBinding<ModuleFramewo
     }
 
     private void initBottomNavigationView() {
-        menuNavigationView = dataBinding.frameworkHomeMenuNavigation;
-//        BottomNavigationViewHelper.disableShiftMode(menuNavigationView);
-        menuNavigationView.setItemIconTintList(null);
-        menuNavigationView.setOnNavigationItemSelectedListener(item -> {
+        dataBinding.frameworkHomeMenuNavigation.setItemIconTintList(null);
+        dataBinding.frameworkHomeMenuNavigation.setOnNavigationItemSelectedListener(item -> {
             int itemId = item.getItemId();
             if (itemId == R.id.menu_framework_item_account) {
                 showFragment(MENU_ACCOUNT_INDEX);
+                isShowMenuAdd(false);
             } else if (itemId == R.id.menu_framework_item_book) {
                 showFragment(MENU_BOOK_INDEX);
+                isShowMenuAdd(true);
             } else if (itemId == R.id.menu_framework_item_me) {
                 showFragment(MENU_PERSONAL_INDEX);
+                isShowMenuAdd(false);
             }
             return true;
         });
-        menuNavigationView.setOnNavigationItemReselectedListener(item -> {
+        dataBinding.frameworkHomeMenuNavigation.setOnNavigationItemReselectedListener(item -> {
             //重写该方法 用来屏蔽ItemSelected选择重复调用
         });
+    }
+
+    private void isShowMenuAdd(boolean isShow) {
+        dataBinding.mavFrameworkMenuAdd.setVisibility(isShow ? View.VISIBLE : View.GONE);
     }
 
     /**
@@ -159,7 +164,7 @@ public class FrameworkMainActivity extends BaseActivityDataBinding<ModuleFramewo
     protected void onNewIntent(Intent intent) {
         index = intent.getIntExtra("index", 0);
         showFragment(index);
-        menuNavigationView.setSelectedItemId(menuNavigationView.getMenu().getItem(index).getItemId());
+        dataBinding.frameworkHomeMenuNavigation.setSelectedItemId(dataBinding.frameworkHomeMenuNavigation.getMenu().getItem(index).getItemId());
         super.onNewIntent(intent);
     }
 }
