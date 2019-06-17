@@ -1,0 +1,66 @@
+apply plugin: 'org.greenrobot.greendao'
+if (rootProject.ext.switchModule.isModuleData) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+
+android {
+    dataBinding {
+        enabled = true
+    }
+
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        if (!rootProject.ext.switchModule.isModuleData) {
+            applicationId rootProject.ext.android.applicationId + ".module_data"
+        }
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner rootProject.ext.android.testInstrumentationRunner
+        //提供给ARouter路由生成中间类
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+    sourceSets {
+        main {
+            if (rootProject.ext.switchModule.isModuleData) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java {
+                    //排除java/application文件夹下的所有文件
+                    exclude '*application'
+                }
+            } else {
+                manifest.srcFile 'src/main/application/AndroidManifest.xml'
+            }
+        }
+    }
+
+    resourcePrefix "module_data_"
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+}
+greendao {
+    schemaVersion 1
+    daoPackage rootProject.ext.android.applicationId + ".module_data.dao"
+}
+
+dependencies {
+    implementation 'org.greenrobot:greendao:3.2.2'
+    implementation project(':lib_base')
+    annotationProcessor rootProject.ext.common_dependencies.arouterCompiler
+}

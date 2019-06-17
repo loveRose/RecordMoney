@@ -6,6 +6,7 @@ ext {
             isModuleBook     : true,
             isModuleMe       : true,
             isModuleWidget   : true,
+            isModuleData     : true,
     ]
 
     //Android项目基本配置

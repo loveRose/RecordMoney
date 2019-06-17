@@ -2,15 +2,29 @@ package com.lvyerose.recordmoney.lib_base.base;
 
 import android.app.Application;
 
+import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.lvyerose.recordmoney.lib_base.BuildConfig;
+import com.lvyerose.recordmoney.lib_base.route.PagerRouteConstant;
+import com.lvyerose.recordmoney.lib_base.route.common.TransmitDatabaseHelperService;
 
 public class BaseCommonApplication extends Application {
+
+    TransmitDatabaseHelperService databaseHelperService;
 
     @Override
     public void onCreate() {
         super.onCreate();
         initARout();
+        initSQLite();
+    }
+
+    private void initSQLite() {
+        //通过主动查找服务获取实例
+        databaseHelperService = (TransmitDatabaseHelperService) ARouter.getInstance().build(PagerRouteConstant.MODULE_DATA_SERVICE_DATABASE_HELPER).navigation();
+        if (databaseHelperService != null) {
+            databaseHelperService.getDatabaseHelper().initDatabase(this, "record_db", null);
+        }
     }
 
     private void initARout() {

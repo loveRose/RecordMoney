@@ -23,4 +23,8 @@ public final class PagerRouteConstant {
     //module_me Service下沉接口路径定义
     public final static String MODULE_ME_SERVICE_ME_FRAGMENT = "/module_me/service/fragmentMe";
 
+
+    //module_data Service下沉接口路径定义
+    public final static String MODULE_DATA_SERVICE_DATABASE_HELPER = "/module_data/service/databaseHelper";
+
 }

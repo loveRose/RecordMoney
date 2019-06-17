@@ -30,5 +30,7 @@ dependencies {
     api rootProject.androidx_dependencies.material
     api rootProject.common_dependencies.arouter
     api rootProject.common_dependencies.rxjava
-
+//    if (rootProject.ext.switchModule.isModuleData) {
+//        api project(':module_data')
+//    }
 }
