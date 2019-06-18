@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -90,6 +92,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle state) {
         parentView = inflater.inflate(setContentLayout(), container, false);
+        ARouter.getInstance().inject(this);
         onAfterSetView(parentView);
         return parentView;
     }

@@ -15,17 +15,17 @@ import com.lvyerose.recordmoney.lib_base.adapter.BaseViewHolder;
 import com.lvyerose.recordmoney.lib_base.base.BaseActivity;
 import com.lvyerose.recordmoney.module_data.DatabaseHelper;
 import com.lvyerose.recordmoney.module_data.R;
+import com.lvyerose.recordmoney.module_data.account.AccountEntity;
 
 import java.util.List;
 
-import application.entity.TestEntity;
 
 public class TestDaoActivity extends BaseActivity {
     RecyclerView recyclerView;
     EditText nameEdt, descEdt;
     Button insertBtn;
 
-    List<TestEntity> list;
+    List<AccountEntity> list;
 
     @Override
     protected int setContentLayout() {
@@ -42,10 +42,10 @@ public class TestDaoActivity extends BaseActivity {
         insertBtn.setOnClickListener(v -> {
             String name = nameEdt.getText().toString().trim();
             String desc = descEdt.getText().toString().trim();
-            TestEntity entity = new TestEntity();
-            entity.setName(name);
-            entity.setDesc(desc);
-            DatabaseHelper.getInstance().insert(DatabaseHelper.getInstance().getDaoSession().getTestEntityDao(), entity);
+            AccountEntity entity = new AccountEntity();
+            entity.setUserName(name);
+            entity.setPassword(desc);
+            DatabaseHelper.getInstance().insert(DatabaseHelper.getInstance().getDaoSession().getAccountEntityDao(), entity);
             queryData();
         });
 
@@ -54,27 +54,26 @@ public class TestDaoActivity extends BaseActivity {
     }
 
     private void queryData() {
-        list = DatabaseHelper.getInstance().query(DatabaseHelper.getInstance().getDaoSession().getTestEntityDao());
+        list = DatabaseHelper.getInstance().query(DatabaseHelper.getInstance().getDaoSession().getAccountEntityDao());
         recyclerView.setAdapter(new SimpleAdapter(this, list, R.layout.module_data_simple_list_layout));
     }
 
 
-    public class SimpleAdapter extends BaseRecyclerAdapter<TestEntity> {
+    public class SimpleAdapter extends BaseRecyclerAdapter<AccountEntity> {
 
         /**
          * @param context
          * @param list
          * @param itemLayoutId
          */
-        public SimpleAdapter(Context context, @Nullable List<TestEntity> list, int itemLayoutId) {
+        public SimpleAdapter(Context context, @Nullable List<AccountEntity> list, int itemLayoutId) {
             super(context, list, itemLayoutId);
         }
 
         @Override
-        protected void convert(BaseViewHolder holder, TestEntity testEntity, int position, List<Object> payloads) {
-            ((TextView) holder.getView(R.id.item_id)).setText(testEntity.get_id() + "");
-            ((TextView) holder.getView(R.id.item_name)).setText(testEntity.getName());
-            ((TextView) holder.getView(R.id.item_desc)).setText(testEntity.getDesc());
+        protected void convert(BaseViewHolder holder, AccountEntity testEntity, int position, List<Object> payloads) {
+            ((TextView) holder.getView(R.id.item_name)).setText(testEntity.getUserName());
+            ((TextView) holder.getView(R.id.item_desc)).setText(testEntity.getPassword());
         }
     }
 

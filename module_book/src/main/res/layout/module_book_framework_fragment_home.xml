@@ -8,6 +8,7 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/tv_account_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="账本页面"

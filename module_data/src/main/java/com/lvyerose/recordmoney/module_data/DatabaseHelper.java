@@ -3,7 +3,7 @@ package com.lvyerose.recordmoney.module_data;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.lvyerose.recordmoney.lib_base.route.expose.IDatabaseHelper;
+import com.lvyerose.recordmoney.lib_base.data.IDatabaseHelper;
 import com.lvyerose.recordmoney.module_data.dao.DaoMaster;
 import com.lvyerose.recordmoney.module_data.dao.DaoSession;
 

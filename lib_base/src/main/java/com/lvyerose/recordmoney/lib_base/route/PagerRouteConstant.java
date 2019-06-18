@@ -6,7 +6,7 @@ package com.lvyerose.recordmoney.lib_base.route;
  */
 public final class PagerRouteConstant {
     //module_main模块跳转路径定义
-    public final static String MODULE_MAIN_FRAMEWORK_MAIN = "/module_framework/frameworkMain";
+    public final static String MODULE_MAIN_ACTIVITY_FRAMEWORK_MAIN = "/module_framework/frameworkMain";
     //module_main Service下沉接口路径定义
 
 
@@ -26,5 +26,8 @@ public final class PagerRouteConstant {
 
     //module_data Service下沉接口路径定义
     public final static String MODULE_DATA_SERVICE_DATABASE_HELPER = "/module_data/service/databaseHelper";
+    public final static String MODULE_DATA_SERVICE_ACCOUNT_MANAGER = "/module_data/service/accountManager";
+    //module_data模块跳转路径定义
+    public final static String MODULE_DATA_ACTIVITY_ACCOUNT_CREATED = "/module_data/accountCreated";
 
 }

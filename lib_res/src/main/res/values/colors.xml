@@ -5,6 +5,7 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="app_windows_background_color">@color/fixed_white</color>
+    <color name="app_windows_other_background_color">#ffdedede</color>
     <color name="app_framework_bottom_background_color">@color/fixed_white</color>
     <color name="base_line_color">#dedede</color>
 

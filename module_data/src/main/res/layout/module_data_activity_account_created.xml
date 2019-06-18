@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="account"
+            type="com.lvyerose.recordmoney.module_data.account.AccountEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_windows_other_background_color"
+        tools:context=".account.AccountCreatedActivity">
+
+        <RelativeLayout
+            android:id="@+id/view_user_name"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shape_white_6_not_stroke"
+            app:layout_constraintBottom_toTopOf="@+id/view_user_password"
+            app:layout_constraintLeft_toLeftOf="@+id/view_user_password"
+            app:layout_constraintWidth_percent="0.8">
+
+            <TextView
+                android:id="@+id/_tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:lines="1"
+                android:padding="10dp"
+                android:text="账户名称"
+                android:textSize="11sp" />
+
+            <View
+                android:id="@+id/_line_view_1"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="12dp"
+                android:layout_toRightOf="@+id/_tv_user_name"
+                android:background="#EEEFFF" />
+
+            <EditText
+                android:id="@+id/edt_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/_line_view_1"
+                android:background="@null"
+                android:hint="请输入账户名"
+                android:maxLength="16"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:text="@={account.userName}"
+                android:textSize="12sp">
+
+                <requestFocus />
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/view_user_password"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="64dp"
+            android:background="@drawable/shape_white_6_not_stroke"
+            app:layout_constraintBottom_toTopOf="@+id/btn_start_account"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintWidth_percent="0.8">
+
+            <TextView
+                android:id="@+id/_tv_user_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:lines="1"
+                android:padding="10dp"
+                android:text="账户密码"
+                android:textSize="11sp" />
+
+            <View
+                android:id="@+id/_line_view_2"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="12dp"
+                android:layout_toRightOf="@+id/_tv_user_password"
+                android:background="#EEEFFF" />
+
+            <EditText
+                android:id="@+id/edt_user_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/_line_view_2"
+                android:background="@null"
+                android:hint="请输入密码"
+                android:inputType="numberPassword"
+                android:maxLength="8"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:text="@={account.password}"
+                android:textSize="12sp">
+
+                <requestFocus />
+            </EditText>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_start_account"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="OnClickStartAccount"
+            android:text="开启旅程"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

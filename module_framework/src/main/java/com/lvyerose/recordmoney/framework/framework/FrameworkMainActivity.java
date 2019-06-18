@@ -19,7 +19,7 @@ import com.lvyerose.recordmoney.lib_base.route.common.TransmitFragmentService;
 /**
  * 项目主架构，协调各个部分的内容，提供架构级的容器和逻辑
  */
-@Route(path = PagerRouteConstant.MODULE_MAIN_FRAMEWORK_MAIN)
+@Route(path = PagerRouteConstant.MODULE_MAIN_ACTIVITY_FRAMEWORK_MAIN)
 public class FrameworkMainActivity extends BaseActivityDataBinding<ModuleFrameworkActivityFrameworkMainBinding> {
     private final static int MENU_ACCOUNT_INDEX = 0;
     private final static int MENU_BOOK_INDEX = 1;

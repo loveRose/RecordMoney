@@ -2,7 +2,6 @@ package com.lvyerose.recordmoney.lib_base.base;
 
 import android.app.Application;
 
-import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.lvyerose.recordmoney.lib_base.BuildConfig;
 import com.lvyerose.recordmoney.lib_base.route.PagerRouteConstant;

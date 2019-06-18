@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 /**
  * 带DataBinding绑定功能的Fragment基类
  *
@@ -20,6 +22,7 @@ public abstract class BaseFragmentDataBinding<T extends ViewDataBinding> extends
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle state) {
         dataBinding = DataBindingUtil.inflate(inflater, setContentLayout(), container, false);
         parentView = dataBinding.getRoot();
+        ARouter.getInstance().inject(this);
         onAfterSetView(parentView);
         return parentView;
     }

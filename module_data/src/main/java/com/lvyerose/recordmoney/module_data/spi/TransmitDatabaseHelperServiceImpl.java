@@ -6,7 +6,7 @@ import android.content.Context;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.lvyerose.recordmoney.lib_base.route.PagerRouteConstant;
 import com.lvyerose.recordmoney.lib_base.route.common.TransmitDatabaseHelperService;
-import com.lvyerose.recordmoney.lib_base.route.expose.IDatabaseHelper;
+import com.lvyerose.recordmoney.lib_base.data.IDatabaseHelper;
 import com.lvyerose.recordmoney.module_data.DatabaseHelper;
 
 @Route(path = PagerRouteConstant.MODULE_DATA_SERVICE_DATABASE_HELPER)

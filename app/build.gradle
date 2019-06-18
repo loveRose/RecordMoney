@@ -41,4 +41,7 @@ dependencies {
     if (rootProject.ext.switchModule.isModuleMe) {
         implementation project(':module_me')
     }
+    if (rootProject.ext.switchModule.isModuleData) {
+        implementation project(':module_data')
+    }
 }
