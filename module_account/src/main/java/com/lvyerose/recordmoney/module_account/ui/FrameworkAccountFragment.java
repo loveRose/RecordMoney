@@ -15,8 +15,5 @@ public class FrameworkAccountFragment extends BaseFragmentDataBinding<ModuleAcco
 
     @Override
     protected void onAfterSetView(View parentView) {
-//        AccountInfo info = new AccountInfo();
-//        info.setAccountName("从module_home中获取到的FragmentHome界面");
-//        dataBinding.setAccount(info);
     }
 }
